@@ -1,6 +1,6 @@
 {
   "name": "@regrapes/stylelint-config-scss",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "REGRAPES SCSS-Stylelint config",
   "keywords": [
     "stylelint",
