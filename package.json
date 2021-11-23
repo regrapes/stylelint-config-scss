@@ -1,0 +1,33 @@
+{
+  "name": "@regrapes/stylelint-config-scss",
+  "version": "0.1.0",
+  "description": "REGRAPES SCSS-Stylelint config",
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-scss"
+  ],
+  "license": "ISC",
+  "author": "REGRAPES GmbH",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext js,jsx,ts,tsx"
+  },
+  "prettier": "@grapes-agency/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": [
+      "@grapes-agency/eslint-config",
+      "@grapes-agency/eslint-config/rules/prettier"
+    ]
+  },
+  "dependencies": {
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@grapes-agency/eslint-config": "^1.6.2"
+  },
+  "peerDependencies": {
+    "stylelint": "^14.0.0"
+  }
+}
