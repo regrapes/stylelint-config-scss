@@ -11,13 +11,14 @@
   "author": "REGRAPES GmbH",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ext js,jsx,ts,tsx"
+    "lint": "eslint --ext js,jsx,ts,tsx",
+    "semantic-release": "semantic-release"
   },
-  "prettier": "@grapes-agency/eslint-config/prettier",
+  "prettier": "@regrapes/eslint-config/prettier",
   "eslintConfig": {
     "extends": [
-      "@grapes-agency/eslint-config",
-      "@grapes-agency/eslint-config/rules/prettier"
+      "@regrapes/eslint-config",
+      "@regrapes/eslint-config/rules/prettier"
     ]
   },
   "dependencies": {
@@ -25,9 +26,40 @@
     "stylelint-scss": "^4.0.0"
   },
   "devDependencies": {
-    "@grapes-agency/eslint-config": "^1.6.2"
+    "@regrapes/eslint-config": "^1.7.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^18.0.0"
   },
   "peerDependencies": {
     "stylelint": "^14.0.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "package-lock.json"
+          ],
+          "message": "chore(release): 🚀 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
   }
 }
